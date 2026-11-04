@@ -39,3 +39,4 @@ kubectl get pods
 
 kubectl get services
 Version 2: Updated DevOps project documentation.
+Version 3: Added development branch changes.
