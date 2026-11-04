@@ -38,3 +38,4 @@ kubectl get pods
 ## Check Services
 
 kubectl get services
+Version 2: Updated DevOps project documentation.
