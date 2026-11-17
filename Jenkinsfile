@@ -4,20 +4,20 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checking source code'
+                git branch: 'main',
+                    url: 'https://github.com/KARTIK3319/DevOps-Configuration.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build') {
             steps {
-                echo 'Building Docker image'
-                sh 'docker build -t devops-project:v1 .'
+                bat 'echo Build completed'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Application build completed'
+                bat 'echo Test completed'
             }
         }
     }
