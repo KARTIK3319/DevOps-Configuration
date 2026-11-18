@@ -1,24 +1,32 @@
+
 pipeline {
     agent any
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/KARTIK3319/DevOps-Configuration.git'
+                echo 'Checking source code'
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                bat 'echo Build completed'
+                bat 'docker --version'
+                bat 'docker build -t devops-project:v1 .'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'echo Test completed'
+                echo 'Testing application'
+            }
+        }
+
+        stage('Branch Information') {
+            steps {
+                echo "Current branch: ${env.BRANCH_NAME}"
             }
         }
     }
 }
+
